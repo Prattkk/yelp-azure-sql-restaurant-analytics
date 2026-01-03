@@ -1,86 +1,86 @@
-# 🍽️ Yelp Restaurant Location & Concept Strategy (Azure SQL + Python)
+# 🍽️ Yelp Restaurant Location & Concept Strategy
 
-End-to-end analytics case study using the Yelp Open Dataset to support a restaurant launch decision:
-**JSON → Azure SQL relational database → 10+ strategic SQL insights → Python-only interactive Marimo web app (no SQL).**
+This project is an end-to-end analytics case study using the **Yelp Open Dataset** to support a real business decision:
+**Where should I open a restaurant, what type should it be, and why?**
 
----
-
-## 🎯 Business Question
-If I were opening a new restaurant, **which city/area should I target, what concept should I launch, and how do I differentiate**, using real customer and competitor data from Yelp?
+The work combines **SQL-based business analysis** with a **Python-only interactive Marimo application**.
 
 ---
 
-## 🧱 What I Built
-### ✅ Milestone 1 — Data Understanding (Yelp JSON)
-- Explored Yelp semi-structured JSON files (business, reviews, users, check-ins, tips)
-- Documented nested fields, data types, geography, and review time period
-- Notebook (Kaggle/Colab) explains dataset scope and transformation plan
+## 🎯 Business Objective
+Opening a restaurant involves high risk and capital investment. Using real Yelp data, this project evaluates:
+- Market saturation & competition
+- Customer preferences and complaints
+- Opportunity gaps by location and cuisine
 
-### ✅ Milestone 2 — Database Implementation (Azure SQL)
-- Designed and implemented a relational schema in **Azure SQL Server**
-- Converted JSON → structured SQL tables with:
-  - Primary keys / foreign keys
-  - Data types and constraints
-  - Validation checks to confirm completeness and correctness
-- Verified metadata against a reference `yelp_champaign` database
-
-### ✅ Milestone 3 — Business Insights (SQL)
-Wrote **10+ SQL queries** that inform real decisions:
-- Market saturation & competition analysis
-- High-demand / low-competition opportunity zones
-- Rating + review volume competitive benchmarks
-- Customer preferences & complaint patterns
-- Differentiation levers (amenities, price range, cuisine)
-
-### ⭐ Extra Credit — Python-Only (Marimo Web App)
-Rebuilt the analysis with **Python only (no SQL)** and published a **Marimo interactive app**:
-- Replicated joins/aggregations in Python
-- Added interactive filters (city, cuisine/category, price range, rating thresholds)
+to recommend a **data-backed restaurant concept and target location**.
 
 ---
 
-## 🗂️ Repository Contents
-- `sql/` → schema + constraints + validation + business insight queries
-- `notebooks/` → Kaggle/Colab notebook link + optional exported notebook
-- `app/` → Marimo interactive Python app + requirements
-- `docs/` → ERD, diagrams, and screenshots
+## 📊 Data Understanding
+- Dataset: Yelp Open Dataset (JSON format)
+- Entities analyzed:
+  - Businesses
+  - Reviews
+  - Users
+  - Check-ins
+  - Tips
+- Explored:
+  - Nested JSON structures
+  - Geographic coverage (city/state)
+  - Review time period and volume
+
+All exploration and analysis are documented in the notebook.
 
 ---
 
-## 🏗️ Database Schema (High Level)
-Main tables:
-- `business`
-- `review`
-- `user`
-- `checkin`
-- `tip`
+## 🧠 Business Analysis (SQL)
+Using SQL queries, the notebook answers strategic questions such as:
+- Where is the restaurant market most saturated?
+- Which cuisines perform best at different price points?
+- What factors correlate with high ratings and review volume?
+- What common complaints appear in low-rated restaurants?
+- Which areas show **high demand but limited competition**?
 
-See: `docs/erd.png` and `sql/01_schema.sql`
+Each query is tied to a **business decision**, not just technical output.
 
 ---
 
-## 🔍 Business Insights (Examples)
-A few questions answered by SQL:
-1. Which neighborhoods/cities have **high demand but low competition**?
-2. What cuisines perform best at each price tier?
-3. What factors correlate with high ratings (e.g., delivery, reservations, parking)?
-4. What are top complaint themes in low-rated restaurants?
+## 🐍 Python-Only Extension (Marimo)
+To extend the project beyond SQL, I rebuilt the analysis using **Python only (no SQL)** and published it as a **Marimo interactive web app**.
 
-All queries: `sql/04_business_queries.sql`
+### Interactive Features
+- City-level filtering
+- Cuisine / category selection
+- Dynamic recalculation of insights based on user input
+
+This demonstrates the ability to translate SQL logic into Python analytics workflows.
+
+---
+
+## 📁 Repository Structure
+
+
+---
+
+## ▶️ Files
+- `notebook/yelp_analysis.ipynb`  
+  → Data exploration and SQL-based business insights
+- `app/marimo_app.html`  
+  → Python-only interactive analytics application
+- `app/marimo_screenshot.png`  
+  → Screenshot demonstrating interactivity
 
 ---
 
 ## 🛠️ Tech Stack
-- **SQL**: Azure SQL Server
-- **Python**: pandas / json processing
-- **Platform**: Kaggle / Google Colab
-- **Interactive App**: Marimo
-- **Data**: Yelp Open Dataset (JSON)
+- SQL (Azure SQL)
+- Python (pandas, JSON processing)
+- Kaggle / Google Colab
+- Marimo (interactive analytics)
 
 ---
 
-## ▶️ How to Run the Marimo App (Python-only)
-```bash
-cd app
-pip install -r requirements.txt
-marimo run marimo_app.py
+## 👤 Author
+**Prateek Verma**  
+MS in Business Analytics, UIUC (Gies College of Business)
